@@ -3,12 +3,10 @@ const UserModel = require('./models/Users');
 const PhotosModel = require('./models/Photos');
 const CriminalModel = require('./models/Criminals');
 const RefugeeModel = require('./models/Refugee');
-const LogsModel = require('./models/Logs');
 const UserController = require('./controllers/UserController');
 const PhotoController = require('./controllers/PhotoController');
 const CriminalController = require('./controllers/CriminalController');
 const RefugeeController = require('./controllers/RefugeeController');
-const LogController = require('./controllers/LogController');
 
 
 
@@ -17,7 +15,7 @@ const userConroller = new UserController(database.getUsers());
 const photoConroller = new PhotoController(database.getPhotos());
 const criminalController = new CriminalController(database.getCriminals());
 const refugeeController = new RefugeeController(database.getRefugees());
-const logController = new LogController(database.getLogs());
+
 
 
 
@@ -30,13 +28,6 @@ let refugee = new RefugeeModel("123", "rafay", "kot addu", "black color");
 let refugee2 = new RefugeeModel("1233", "rafaysfsdf", "kot afrgdddu", "blackgdf color");
 let photo = new PhotosModel("123", "front", "rafay.jpg", new Date(), "asylumCenter");
 let photo2 = new PhotosModel("123", "back", "rafay.jpg", new Date(), "asylumCenter");
-
-// let refugee2 = new RefugeeModel(0, "123", "rafaysfsdf", "kot afrgdddu", "blackgdf color");
-
-
-
-
-// let photo = new UserModel(0, "rafay", "javaid", "police");
 
 
 
@@ -87,7 +78,7 @@ try {
 
 
 
-    console.log("ssdfsdf", database.getLogs());
+    console.log("logs", database.getLogs());
 
 
 
@@ -96,7 +87,6 @@ try {
     console.log(e.message);
 }
 
-// console.log(database.getUsers());
 
 
 
@@ -122,108 +112,3 @@ try {
 
 
 
-
-
-
-// import { AsylumSeeker } from "./AsylumSeeks.js";
-// import UserController from "./controllers/UserController";
-// import { Criminal } from "./Criminal.js";
-
-
-
-// // Photo Gallery memory 
-// const memory = [{
-//     cprNumber: '1234',
-//     name: 'rafay',
-//     currentAddress: 'no Address',
-//     category: 'criminal',
-//     physicalDescription: 'no apperance',
-//     leftProfile: 'leftImage',
-//     righProfile: 'rightImage',
-//     frontProfile: 'frontImage',
-//     createdAt: "2022-09-02T16:32:23.347Z"
-// },
-// {
-//     cprNumber: '1236',
-//     name: 'rafay',
-//     currentAddress: 'no Address',
-//     category: 'criminal',
-//     physicalDescription: 'no apperance',
-//     leftProfile: 'leftImage',
-//     righProfile: 'rightImage',
-//     frontProfile: 'frontImage',
-//     createdAt: "2022-09-02T16:32:23.347Z"
-// },
-// ];
-// const logs = [];
-
-
-
-
-// const asylumSeeker = new AsylumSeeker(memory, logs);
-// const criminal = new Criminal(memory, logs);
-
-
-
-
-// //////////////////// CRIMINAL SEEKERS ///////////////////////
-
-
-
-// // creating Criminal
-// criminal.createCriminal("1234", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-// criminal.createCriminal("1235", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-// criminal.createCriminal("1236", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-
-
-// // delete criminal
-// criminal.deleteCriminal("1235")
-
-// // view criminal
-// const criminl = criminal.viewCriminal("1236e")
-
-// // view criminals
-// const crimials = criminal.viewCriminals()
-
-// // console.log("The criminal has", crimials)
-
-
-
-// ///////////////////////////////////////////////////////////
-
-
-
-
-
-// /////////////////////////// Asylum seekers /////////////////////////////
-
-// // creating Asylum Seeker
-// asylumSeeker.createAsylumSeeker("1234", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-// asylumSeeker.createAsylumSeeker("1235", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-// asylumSeeker.createAsylumSeeker("1236", "rafay", "no Address", "no apperance", "leftImage", "rightImage", "frontImage");
-
-
-// // delete Asylum Seeker
-// asylumSeeker.deleteAsylumSeeker("1235")
-
-// // view Asylum Seeker
-// const assylumSeeker = asylumSeeker.viewAsylumSeeker("1236e")
-
-// // view Asylum Seekers
-// const asylumSeekers = asylumSeeker.viewAsylumSeekers()
-
-
-// // view Asylum Seekers
-// const update = asylumSeeker.updateAsylumSeekers("1236")
-
-// // console.log("The Asylum Seekers has", asylumSeekers)
-
-
-
-// /////////////////////////////////////////////////////
-
-
-
-
-// console.log("The memory has", memory);
-// // console.log("The logs has \n", logs);
